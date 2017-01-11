@@ -1,0 +1,46 @@
+package rmi.chef;
+
+//ist eigentlich der Vermittler!!!
+
+import java.rmi.*;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.registry.RegistryHandler;
+
+import rmi.interfaces.*;
+
+public class Vermittler {
+	
+	public Vermittler() {
+
+		try {
+			//VermittlerRemote c = new VermittlerRemoteImpl(); 
+			LocateRegistry.createRegistry(1099); //Erstellung der Registy
+			
+	         /*final String[] boundNames = registry.list();
+			for (int i = 0; i < registry.list().length; i++) {
+				
+				String string = registry.list()[i];
+				System.out.println(string);
+			}*/
+			
+			//for (){
+				
+				
+			//}
+			
+			//Naming.rebind("rmi://localhost:1099/ToeneService", c);//stellt Service für TöneVermittlung
+			//System.out.println("RMI-Registry und Service is ready.");
+		} catch (Exception e) {
+			System.out.println("RMI-intefaces-Server failed: " + e);
+		}
+		System.out.println("ist gestartet");
+	}
+	
+	public static void main(String args[]) {
+	
+		new Vermittler();
+		
+	}
+	
+}

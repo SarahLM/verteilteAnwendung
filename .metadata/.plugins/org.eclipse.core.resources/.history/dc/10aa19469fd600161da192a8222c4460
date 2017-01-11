@@ -1,0 +1,59 @@
+package rmi.mitarbeiter;
+
+//ist der Mitarbeiter
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.rmi.Naming;
+import java.rmi.server.UnicastRemoteObject;
+
+import rmi.interfaces.*;
+
+public class Client extends UnicastRemoteObject implements MitarbeiterRemote  {
+	
+	private static final long serialVersionUID = 1L;
+	
+	Sound sound;
+	
+	public Client() throws java.rmi.RemoteException{
+		
+		sound = new Sound();
+	
+	}
+	  
+	public static void main(String[] args) {
+
+		try {
+    
+			String fromUser="";
+			Client client = new Client();
+    
+			VermittlerRemote c = (VermittlerRemote) Naming.lookup("rmi://localhost/ToeneService");
+			//ServerRemote c = (ServerRemote) Naming.lookup("rmi://192.168.178.21/ToeneService");
+			System.out.println(c.sayHello("me"));
+			c.addClient((MitarbeiterRemote)client);
+	
+			// Programm so lange auführen bis 'exit' über die Konsole eingegeben wird
+			while (!fromUser.equals("exit")) {	
+				BufferedReader user_br = new BufferedReader(new InputStreamReader(System.in));
+				fromUser = user_br.readLine();
+			}
+	
+			System.out.println("RMI-interaces-client already finished");
+			
+	
+		} catch (Exception e) {
+	
+			System.out.println("RMI-interaces-client exception: " + e);
+	
+		}
+	}
+
+	public String play(int msg) {
+	
+		sound.run(msg);
+		System.out.println("ClientRemote.play");	
+		return "";
+		
+	}
+
+}

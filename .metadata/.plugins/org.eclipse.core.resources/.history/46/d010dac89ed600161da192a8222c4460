@@ -1,0 +1,45 @@
+package rmi.vermittler;
+
+
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
+import java.util.*;
+
+@SuppressWarnings("serial")
+public class VermittlerRemoteImpl extends UnicastRemoteObject implements VermittlerRemote {
+
+	private Vector<ClientRemote> clients = new Vector<ClientRemote>();
+	
+	public VermittlerRemoteImpl() throws RemoteException {
+		//super();
+	}
+
+	public String sayHello(String user) {
+		
+		return "hello " + user; //wird in Client übergeben
+
+	}
+
+	public synchronized void addClient ( ClientRemote o ) throws RemoteException {
+		
+		clients.addElement( o ); //übergeben Verweis auf sich selber
+		System.out.println("added new client");
+		
+    }
+
+	public  synchronized String play(int msg) throws RemoteException {
+    
+		for (Enumeration<ClientRemote> e = clients.elements(); e.hasMoreElements();) {
+			ClientRemote client = (ClientRemote) e.nextElement();
+			try {
+				client.play(msg);
+			} catch (RemoteException ex) {
+				System.out.println("play on client " + client + " failed.");
+			}
+		}
+		
+		return "";
+	
+	}
+
+}

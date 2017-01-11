@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane minHeight="150.0" minWidth="500.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #3399FF;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="428.0" layoutX="107.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Reminder.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="62.0" fitWidth="61.0" layoutX="251.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/Boss-2-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="350.0" minWidth="600.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Text fill="#ff6666" fontSmoothingType="LCD" layoutX="220.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Big Boss ruft zum ...">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="98.0" fitWidth="108.0" layoutX="53.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/meeting.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="98.0" fitWidth="108.0" layoutX="252.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/dinner.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="98.0" fitWidth="108.0" layoutX="449.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/party.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="64.0" layoutY="247.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" style="-fx-background-color: #FFFF; -fx-border-color: #FF3366;" text="Meeting" textFill="#ff3366" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button layoutX="263.0" layoutY="247.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" style="-fx-background-color: #FFFF; -fx-border-color: #3399FF;" text="Dinner" textFill="#3399ff">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="460.0" layoutY="247.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" style="-fx-border-color: #FF9900; -fx-background-color: #FFFF;" text="After Work" textFill="#ff9900">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
