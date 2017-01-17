@@ -1,0 +1,35 @@
+package application;
+
+import java.rmi.RemoteException;
+
+import rmi.chef.*;
+
+public class ObserverTestMain {
+
+	public static void main(String[] args) throws RemoteException {
+		// TODO Auto-generated method stub
+			
+			Vermittler Toene = new Vermittler();
+			weitererVermittler Lampe = new weitererVermittler();
+			Lampe.setVermittlerName("LampeApp");
+			Toene.setVermittlerName("ToeneApp");
+
+			Buttontest button1 = new Buttontest();
+			button1.registerObserver(Toene);
+			button1.setClicked(true);
+			button1.setButtonID("ton1");
+
+			
+			
+			
+			
+
+			
+			
+			
+			
+
+	}
+	
+
+}

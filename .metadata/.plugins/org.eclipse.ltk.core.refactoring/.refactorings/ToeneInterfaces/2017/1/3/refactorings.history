@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;rmi.interfaces.Oberserver&apos; to &apos;Observer&apos;&#x0D;&#x0A;- Original project: &apos;ToeneInterfaces&apos;&#x0D;&#x0A;- Original element: &apos;rmi.interfaces.Oberserver&apos;&#x0D;&#x0A;- Renamed element: &apos;rmi.interfaces.Observer&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Oberserver&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;rmi.interfaces{Oberserver.java[Oberserver" matchStrategy="1" name="Observer" qualified="false" references="true" similarDeclarations="false" stamp="1484594039912" textual="false" version="1.0"/>
+</session>

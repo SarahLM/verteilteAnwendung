@@ -1,0 +1,10 @@
+package rmi.chef;
+
+public class RegistryStarten {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

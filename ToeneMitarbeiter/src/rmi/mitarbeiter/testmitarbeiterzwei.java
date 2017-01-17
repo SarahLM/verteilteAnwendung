@@ -16,6 +16,9 @@ public class testmitarbeiterzwei {
 
 	Naming.rebind("rmi://localhost:1099/test2", c);
 	
+	System.out.println("angemeldet ");
+
+	
 	}
  catch (Exception e) {
 	System.out.println("RMI-intefaces-Server failed: " + e);
