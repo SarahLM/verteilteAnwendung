@@ -1,130 +1,90 @@
 package rmi.interfaces;
+
 import javax.sound.sampled.*;
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.rmi.Remote;
 import java.util.Random;
+import java.rmi.server.UnicastRemoteObject;
 
-public class Sound {
+public class Sound implements Remote {
+	private static final long serialVersionUID = 1L;
+	
+	 public void run(int ID) {
+		 
+		  
+		  switch(ID)
+		  {
+		  case 1:
+			  InputStream is = getClass().getResourceAsStream("imperial_march.wav");
+				try {
+					javax.sound.sampled.AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is);
 
-  public void run(int ID) {
-	  switch(ID)
-	  {
-	  case 1:
-    Sound.laser();
-    break;
-	  case 2:
-    Sound.bang();
-    break;
-	  case 3:
-    Sound.warp();
-    break;
+					javax.sound.sampled.Clip clip = AudioSystem.getClip();;
+					clip.open(audioInputStream);
+					clip.start();
+				} catch (UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			  break;
+	    
+	    
+		  case 2:
+			  InputStream is2 = getClass().getResourceAsStream("Sarafina.wav");
+				try {
+					javax.sound.sampled.AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is2);
+
+					javax.sound.sampled.Clip clip = AudioSystem.getClip();;
+					clip.open(audioInputStream);
+					clip.start();
+				} catch (UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			  break;
+		  case 3:
+			  InputStream is3 = getClass().getResourceAsStream("push_it.wav");
+				try {
+					javax.sound.sampled.AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(is3);
+
+					javax.sound.sampled.Clip clip = AudioSystem.getClip();;
+					clip.open(audioInputStream);
+					clip.start();
+				} catch (UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			  break;
+	   
+		  }
 	  }
-  }
-
-  public static void laser() {
-    int repeat = 10;
-    try {
-      AudioFormat af = new AudioFormat(8000f, // sampleRate
-          8, // sampleSizeInBits
-          1, // channels
-          true, // signed
-          false); // bigEndian
-      SourceDataLine sdl;
-      sdl = AudioSystem.getSourceDataLine(af);
-      sdl.open(af);
-      sdl.start();
-
-      byte[] buf = new byte[1];
-      int step;
-
-      for (int j = 0; j < repeat; j++) {
-        step = 10;
-        for (int i = 0; i < 2000; i++) {
-          buf[0] = ((i % step > 0) ? 32 : (byte) 0);
-
-          if (i % 250 == 0)
-            step += 2;
-          sdl.write(buf, 0, 1);
-        }
-        Thread.sleep(200);
-      }
-      sdl.drain();
-      sdl.stop();
-      sdl.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-  public static void bang(){
-  try {
-		    
-		 AudioFormat af = new AudioFormat(8000f,
-		          8,           // sampleSizeInBits
-		          1,           // channels
-		          true,        // signed
-		          false);      // bigEndian
-		    SourceDataLine sdl = AudioSystem.getSourceDataLine(af);
-		    sdl.open(af);
-		    sdl.start();
-
-		    byte[] buf = new byte[1];
-		    Random r = new Random();
-		    boolean silence = true;
-		    for (int i=0 ; i < 8000 ; i++) {
-		      while(r.nextInt() % 10 != 0) {
-		          buf[0] =
-		            silence ? 0 :
-		              (byte)Math.abs(r.nextInt() %
-		                  (int)(1. + 63. * (1. + Math.cos(((double)i)
-		                      * Math.PI / 8000.))));
-		          i++;
-		          sdl.write(buf,0,1);
-		      }
-		      silence = !silence;
-		  }
-		    sdl.drain();
-		    sdl.stop();
-		    sdl.close();
-		  }
-  catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
-  public static void warp(){
-  int repeat3 = 10;
-  try {
-		    
-		    AudioFormat af = new AudioFormat(8000f,
-		        
-		          8,           // sampleSizeInBits
-		          1,           // channels
-		          true,        // signed
-		          false);      // bigEndian
-		    SourceDataLine sdl = AudioSystem.getSourceDataLine(af);
-		    sdl.open(af);
-		    sdl.start();
-
-		    byte[] buf = new byte[1];
-		    int step;
-
-		    for (int j=0; j < repeat3; j++) {
-		      step = 25;
-		      for(int i=0; i < 2000; i++) {
-		        if(i < 500) {
-		          buf[0] = ((i%step > 0) ? 32 : (byte)0);
-		          if(i%25 == 0) step--;
-		        }
-		        else {
-		          buf[0] = ((i%step > 0) ? 16 : (byte)0);
-		          if(i%50 == 0) step++;
-		        }
-		        sdl.write(buf,0,1);
-		      }
-		    }
-		    sdl.drain();
-		    sdl.stop();
-		    sdl.close();
-		  }
-  catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
 }
+

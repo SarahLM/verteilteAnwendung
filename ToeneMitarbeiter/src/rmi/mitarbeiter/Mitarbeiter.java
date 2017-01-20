@@ -4,6 +4,7 @@ package rmi.mitarbeiter;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.rmi.Naming;
+import java.rmi.Remote;
 import java.rmi.server.UnicastRemoteObject;
 
 import rmi.interfaces.*;
@@ -15,22 +16,22 @@ public class Mitarbeiter extends UnicastRemoteObject implements MitarbeiterRemot
 	Sound sound;
 	
 	public Mitarbeiter() throws java.rmi.RemoteException{
-		
-		sound = new Sound();
 	
 	}
 	  
 	public static void main(String[] args) {
 
 		try {
+			
     
 			String fromUser="";
 			Mitarbeiter client = new Mitarbeiter();
-    
-			VermittlerRemote c = (VermittlerRemote) Naming.lookup("rmi://localhost/ToeneService");
+			
+			Naming.rebind("rmi://localhost:1099/Mitarbeiter",new MitarbeiterImpl());
+			System.out.println("BLA");
 			//ServerRemote c = (ServerRemote) Naming.lookup("rmi://192.168.178.21/ToeneService");
-			System.out.println(c.sayHello("me"));
-			c.addClient((MitarbeiterRemote)client);
+			//System.out.println(c.sayHello("me"));
+			//c.addClient((MitarbeiterRemote)client);
 	
 			// Programm so lange auführen bis 'exit' über die Konsole eingegeben wird
 			while (!fromUser.equals("exit")) {	
