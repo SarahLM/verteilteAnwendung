@@ -7,6 +7,8 @@ public class MainScreenInterfaceImpl implements MainScreenInterface, Serializabl
 
 	//	MainScreenController msc;
 
+	private static final long serialVersionUID = 1L;
+
 	public MainScreenInterfaceImpl() {
 		super();
 

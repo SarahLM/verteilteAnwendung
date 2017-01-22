@@ -20,9 +20,9 @@ public class ObserverTestMain {
 			Lampe.setVermittlerName("LampeApp");
 
 
-			/*Buttontest button1 = new Buttontest();
-			Naming.rebind("rmi://localhost:1099/ToeneServiceneu", button1);//stellt Service für TöneVermittlung
-			*/
+			Buttontest button1 = new Buttontest();
+			//Naming.rebind("rmi://localhost:1099/ToeneServiceneu", button1);//stellt Service für TöneVermittlung
+			
 			//hier muss dann das lookup kommen und ich brauche noch die methoden aus buttontest als interface
 			
 			

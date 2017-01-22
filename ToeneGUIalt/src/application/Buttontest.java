@@ -80,9 +80,6 @@ public class Buttontest extends UnicastRemoteObject implements Subject{
 		
 	}
 
-	public static void main(String[] args) throws RemoteException, IOException {
-		Buttontest button1 = new Buttontest();
-		Naming.rebind("rmi://localhost:1099/ToeneServiceneu", button1);
-	}
+	
 
 }

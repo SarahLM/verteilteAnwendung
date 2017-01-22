@@ -12,4 +12,8 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.Clip"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="rmi.interfaces.MitarbeiterRemote"/>
+<fullyQualifiedTypeName name="rmi.interfaces.InterfaceOfButtontest"/>
 </qualifiedTypeNameHistroy>

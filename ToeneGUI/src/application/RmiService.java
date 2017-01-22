@@ -12,8 +12,6 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 
 	MainScreenController msc;
 
-
-
 	public RmiService(MainScreenController msc) throws RemoteException {
 		super(0);
 		this.msc = msc;
@@ -21,13 +19,9 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 
 	public void start() throws MalformedURLException, RemoteException, AlreadyBoundException{
 
-
-
 		try{
 			//MainScreenInterface stub = (MainScreenInterface) UnicastRemoteObject.exportObject(this,0);
-
-
-			Registry registry = LocateRegistry.createRegistry(1099);
+			//Registry registry = LocateRegistry.createRegistry(1099);
 			Naming.rebind("rmi://localhost:1099/RmiService" , new MainScreenInterfaceImpl());
 
 			System.out.println("Frontend Service ist ready");

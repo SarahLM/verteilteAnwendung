@@ -5,11 +5,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.rmi.Naming;
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import rmi.interfaces.*;
 
-public class Mitarbeiter extends UnicastRemoteObject implements MitarbeiterRemote  {
+public class Mitarbeiter extends UnicastRemoteObject {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -24,8 +25,8 @@ public class Mitarbeiter extends UnicastRemoteObject implements MitarbeiterRemot
 		try {
 			
     
-			String fromUser="";
-			Mitarbeiter client = new Mitarbeiter();
+			//String fromUser="";
+			//Mitarbeiter client = new Mitarbeiter();
 			
 			Naming.rebind("rmi://localhost:1099/Mitarbeiter",new MitarbeiterImpl());
 			System.out.println("BLA");
@@ -34,12 +35,12 @@ public class Mitarbeiter extends UnicastRemoteObject implements MitarbeiterRemot
 			//c.addClient((MitarbeiterRemote)client);
 	
 			// Programm so lange auführen bis 'exit' über die Konsole eingegeben wird
-			while (!fromUser.equals("exit")) {	
+			/*while (!fromUser.equals("exit")) {	
 				BufferedReader user_br = new BufferedReader(new InputStreamReader(System.in));
 				fromUser = user_br.readLine();
-			}
-	
-			System.out.println("RMI-interaces-client already finished");
+			}*/
+			
+			//System.out.println("RMI-interaces-client already finished");
 			
 	
 		} catch (Exception e) {
@@ -49,12 +50,8 @@ public class Mitarbeiter extends UnicastRemoteObject implements MitarbeiterRemot
 		}
 	}
 
-	public String play(int msg) {
 	
-		sound.run(msg);
-		System.out.println("ClientRemote.play");	
-		return "";
-		
-	}
+
+	
 
 }
