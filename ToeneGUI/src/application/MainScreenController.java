@@ -1,27 +1,32 @@
-package application;
+package src.application;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import rmi.interfaces.*;
+//import rmi.interfaces.*;
+import rmi.interfaces.Observer;
 
 import java.awt.Image;
 import java.io.Serializable;
 import java.net.URL;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import org.omg.CORBA.INITIALIZE;
 
-public class MainScreenController implements Initializable, MainScreenInterface {
-
+public class MainScreenController implements Initializable {
+	
+	private ArrayList<Observer> observers;
 	
 	@FXML
 	private Button button1;
@@ -52,79 +57,95 @@ public class MainScreenController implements Initializable, MainScreenInterface 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		observers = new ArrayList<>();
 	}
-
 
 	@FXML
-	protected void actButton( ActionEvent event ) {
-
-		// Was soll in Zukunft passieren
-		// Vorher per rmi festgelegte Remote Methoden sollen hier ausgeführt werden
+	protected void actButton( ActionEvent event ) throws RemoteException, NotBoundException {
 		
-
-	}
-
-	@Override
-	public void setText(int buttonIndex, String text) throws RemoteException {
-
-		switch(buttonIndex) {
-
-		case 1:
-			button1.setText(text);
-			break;
-
-		case 2:
-			button2.setText(text);				
-			break;
-
-		case 3:
-			button3.setText(text);
-			break;
-
+		Button btn = (Button) event.getSource();
+		int buttonID = Integer.parseInt(btn.getId().substring(6));
+		for ( Observer observer : observers ) {
+			observer.update(buttonID);
 		}
+		
+	}
+
+	public void setText(int buttonIndex, String text) throws RemoteException {
+		
+		Platform.runLater(new Runnable() {
+            @Override public void run() {
+
+        		switch(buttonIndex) {
+
+        		case 1:
+        			button1.setText(text);
+        			break;
+
+        		case 2:
+        			button2.setText(text);				
+        			break;
+
+        		case 3:
+        			button3.setText(text);
+        			break;
+
+        		}
+            	
+            }
+        });
 
 	}
 
-
-	@Override
 	public void setBodyText(String text) throws RemoteException{
-		bodytext.setText(text);
+		Platform.runLater(new Runnable() {
+            @Override public void run() {
+            	bodytext.setText(text);
+            }
+        });
 	}
 
-
-	@Override
 	public void setPictures(int pictureIndex, boolean visible) throws RemoteException {
 		
-		switch(pictureIndex) {
+		Platform.runLater(new Runnable() {
+            @Override public void run() {
+            	
+        		switch(pictureIndex) {
 
-		case 1:
-			image1.setVisible(visible);
-			break;
+        		case 1:
+        			image1.setVisible(visible);
+        			break;
 
-		case 2:			
-			image2.setVisible(visible);
-			break;
+        		case 2:			
+        			image2.setVisible(visible);
+        			break;
 
-		case 3:
-			image3.setVisible(visible);
-			break;
-			
-		case 4:
-			image4.setVisible(visible);
-			break;
-			
-		case 5:
-			image5.setVisible(visible);
-			break;
+        		case 3:
+        			image3.setVisible(visible);
+        			break;
+        			
+        		case 4:
+        			image4.setVisible(visible);
+        			break;
+        			
+        		case 5:
+        			image5.setVisible(visible);
+        			break;
 
-		}
-		
-		
+        		}
+
+            	
+            }
+        });
+
 	}
 
+	public void addObserver(Observer observer) {
+		this.observers.add(observer);
+	}
 
-
-
-
+	public void removeObserver(Observer observer) {
+		this.observers.remove(observer);		
+	}
 
 }

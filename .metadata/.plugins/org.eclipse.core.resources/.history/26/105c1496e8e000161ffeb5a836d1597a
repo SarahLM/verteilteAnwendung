@@ -1,0 +1,14 @@
+package application;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+import application.MainScreenController;
+
+public interface RmiInterface extends Remote {
+	
+	MainScreenController lookup() throws RemoteException;
+	
+	
+
+}

@@ -1,57 +1,53 @@
 package rmi.mitarbeiter;
 
 //ist der Mitarbeiter
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.rmi.Naming;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-import rmi.interfaces.*;
+import rmi.interfaces.SoundInterface;
+import rmi.mitarbeiter.Sound;
 
-public class Mitarbeiter extends UnicastRemoteObject {
-	
+public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
+
 	private static final long serialVersionUID = 1L;
 	
 	Sound sound;
 	
-	public Mitarbeiter() throws java.rmi.RemoteException{
+	public Mitarbeiter() throws RemoteException {
+		super();
+		sound = new Sound();
+	}
 	
+	public void start() {
+		
+		// Später um ein Timeout erweitern
+		boolean notBound = true;
+		while (notBound) {
+			try {
+				int token = (int) ((Math.random()*99999)+1);
+				Registry registry = LocateRegistry.getRegistry();
+				registry.bind("SND_" + String.format("%05d", token), this);
+				notBound = false;
+				System.out.println("Sound Service ist ready");
+			} catch (Exception e) {
+				System.out.println("RMI-interfaces-client exception: " + e);
+			}
+		}
+		
 	}
 	  
-	public static void main(String[] args) {
+	public static void main(String[] args) throws RemoteException {
 
-		try {
-			
-    
-			//String fromUser="";
-			//Mitarbeiter client = new Mitarbeiter();
-			
-			Naming.rebind("rmi://localhost:1099/Mitarbeiter",new MitarbeiterImpl());
-			System.out.println("BLA");
-			//ServerRemote c = (ServerRemote) Naming.lookup("rmi://192.168.178.21/ToeneService");
-			//System.out.println(c.sayHello("me"));
-			//c.addClient((MitarbeiterRemote)client);
-	
-			// Programm so lange auführen bis 'exit' über die Konsole eingegeben wird
-			/*while (!fromUser.equals("exit")) {	
-				BufferedReader user_br = new BufferedReader(new InputStreamReader(System.in));
-				fromUser = user_br.readLine();
-			}*/
-			
-			//System.out.println("RMI-interaces-client already finished");
-			
-	
-		} catch (Exception e) {
-	
-			System.out.println("RMI-interaces-client exception: " + e);
-	
-		}
+		Mitarbeiter m = new Mitarbeiter();
+		m.start();
+
 	}
 
-	
-
-	
+	@Override
+	public void play(int msg) throws RemoteException {
+		sound.run(msg);
+	}
 
 }

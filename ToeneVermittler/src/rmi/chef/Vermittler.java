@@ -1,120 +1,80 @@
 package rmi.chef;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-//ist eigentlich der Vermittler!!!
-
-import java.rmi.*;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.registry.RegistryHandler;
 import java.util.ArrayList;
-import java.util.List;
 
-import application.Buttontest;
-import rmi.interfaces.*;
+import rmi.interfaces.MainScreenInterface;
+import rmi.interfaces.Observer;
+import rmi.interfaces.SoundInterface;
 
-public class Vermittler implements Observer,MitarbeiterRemote{
-	
-	private String vermittlerName;
-	private Subject subject;
-	private String buttonID;
-	
-	private boolean clicked;
-	
-	
-	public Vermittler() {
+public class Vermittler extends java.rmi.server.UnicastRemoteObject implements Observer {
 
+	private static final long serialVersionUID = 1L;
+	
+	private ArrayList<String> usersGUI;
+	private ArrayList<String> usersSounds;
+	Registry registry;
+	
+	public Vermittler() throws RemoteException {
+		super();
+		usersGUI = new ArrayList<>();
+		usersSounds = new ArrayList<>();
+	}
+	
+	public void start() {
+		
 		try {
-			String fromUser="";
-
-			//VermittlerRemote c = new VermittlerRemoteImpl();
-			//LocateRegistry.createRegistry(Registry.REGISTRY_PORT); //RMI-Registry starten
-			//Registry registry = LocateRegistry.getRegistry(); //Erstellung der Registy
 			
-			//Naming.rebind("rmi://localhost:1099/vermittler", c);//stellt Service für TöneVermittlung
-
-	         
-			Registry registry = LocateRegistry.getRegistry(); 
+			registry = LocateRegistry.createRegistry(1099);
 			
-			//hier bis
-			
-			
-			
-			final String[] boundNames = registry.list();
-			for (int i = 0; i < registry.list().length; i++) {
+			while ( true ) {
 				
-		        
-				String string = registry.list()[i];
-				MitarbeiterRemote c = (MitarbeiterRemote) Naming.lookup("rmi://localhost:1099/"+string);
-				c.play(2);
-				System.out.println("Servicename: "+ string);
+				Thread.sleep(5000);
+				
+				final String[] services = registry.list();
+				for ( String service : services ) {
+					if ( service.substring(0, 3).equals("GUI") && !this.usersGUI.contains(service) ) {
+						System.out.println("GUI Service added: " + service);
+						MainScreenInterface msi = (MainScreenInterface) registry.lookup(service);
+						msi.register(this);
+						this.usersGUI.add(service);
+					}
+					
+					if ( service.substring(0, 3).equals("SND") && !this.usersSounds.contains(service) ) {
+						System.out.println("Sound Service added: " + service);
+						this.usersSounds.add(service);
+					}
+				
+				}
+				
 			}
 			
-			//hier
-			//for (){
-			System.out.println("ist gestartet");
-
-			/*while (!fromUser.equals("exit")) {	
-				BufferedReader user_br = new BufferedReader(new InputStreamReader(System.in));
-				fromUser = user_br.readLine();
-			}*/
-			//}
-			
-			//Naming.rebind("rmi://localhost:1099/ToeneService", c);//stellt Service für TöneVermittlung
-			//System.out.println("RMI-Registry und Service is ready.");
 		} catch (Exception e) {
-			System.out.println("RMI-intefaces-Server failed: " + e);
+			System.out.println(e);
 		}
 	}
 	
-	
-	
-
-
-
-	public String getVermittlerName() {
-		return vermittlerName;
-	}
-
-	public void setVermittlerName(String vermittlerName) {
-		this.vermittlerName = vermittlerName;
-	}
-
-	public Subject getSubject() {
-		return subject;
-	}
-
-	public void setSubject(Subject subject) {
-		this.subject = subject;
-	}
-	
-	@Override
-	public void update(String ButtonID) throws RemoteException {
-			System.out.println("Hallo "+ vermittlerName +" der Button "+ ButtonID + " wurde gedrückt");
-	}
-
-
+	public static void main(String[] args) throws RemoteException {
+		Vermittler s = new Vermittler();
+		s.start();
+}
 
 	@Override
-	public String play(int msg) throws RemoteException {
-		// TODO Auto-generated method stub
-		return "";
+	public void update(int buttonId) throws RemoteException, NotBoundException {
+		System.out.println("Button " + buttonId + " clicked.");
+		try {
+			for ( String service : usersSounds ) {
+				System.out.println(service);
+				SoundInterface si = (SoundInterface) registry.lookup(service);
+				si.play(buttonId);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
-	public static void main(String[] args) throws RemoteException, IOException {
-		ButtonImpl button = Naming.lookup("rmi://localhost:1099/Button");
-	}
-
-
-
-
 	
-
-
-
-
-
 }
