@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import rmi.interfaces.MainScreenInterface;
 import rmi.interfaces.Observer;
 import rmi.interfaces.SoundInterface;
-import rmi.interfaces.IBinder;
+
 
 public class Vermittler extends java.rmi.server.UnicastRemoteObject implements Observer {
 

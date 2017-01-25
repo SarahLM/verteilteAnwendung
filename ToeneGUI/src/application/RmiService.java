@@ -2,16 +2,14 @@ package src.application;
 
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 
-import rmi.interfaces.IBinder;
-import rmi.interfaces.MainScreenInterface;
-import rmi.interfaces.Observer;
+import org.htw.fiw.vs.IBinder;
+import org.htw.fiw.vs.team2.Buttons.MainScreenInterface;
+import org.htw.fiw.vs.team2.Buttons.Observer;
 
 public class RmiService extends UnicastRemoteObject implements MainScreenInterface{
 
@@ -32,9 +30,9 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 			try {
 				notBound = false	;
 				int token = (int) ((Math.random()*99999)+1);
-				//Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.16", 1099);
-				//IBinder registry = (IBinder) connectRegistry.lookup("binder");
-				Registry registry = LocateRegistry.getRegistry(1099);
+				Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
+				IBinder registry = (IBinder) connectRegistry.lookup("binder");
+				//Registry registry = LocateRegistry.getRegistry(1099);
 				registry.bind("GUI_" + String.format("%05d", token), this);
 				notBound = false;
 				System.out.println("Frontend Service ist ready");

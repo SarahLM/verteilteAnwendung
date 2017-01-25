@@ -1,5 +1,13 @@
 package src.application;
 
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import org.htw.fiw.vs.team2.Buttons.Observer;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,22 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-//import rmi.interfaces.*;
-import rmi.interfaces.Observer;
-
-import java.awt.Image;
-import java.io.Serializable;
-import java.net.URL;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-
-import org.omg.CORBA.INITIALIZE;
 
 public class MainScreenController implements Initializable {
 	
