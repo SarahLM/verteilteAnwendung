@@ -6,10 +6,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-import org.htw.fiw.vs.IBinder;
-
-//import rmi.interfaces.SoundInterface;
-import org.htw.fiw.vs.team2.MitarbeiterToene.*;
+import rmi.interfaces.SoundInterface;
+import rmi.mitarbeiter.Sound;
 
 public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
 
@@ -29,12 +27,8 @@ public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
 		while (notBound) {
 			try {
 				int token = (int) ((Math.random()*99999)+1);
-				
-				Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
-				IBinder registry = (IBinder) connectRegistry.lookup("binder");
-				
-				//Registry registry = LocateRegistry.getRegistry("141.45.207.220",1099);
-				registry.bind("SND_" + String.format("%05d", token), this);
+				Registry registry = LocateRegistry.getRegistry("141.45.214.117",1099);
+				registry.rebind("SND_" + String.format("%05d", token), this);
 				notBound = false;
 				System.out.println("Sound Service ist ready");
 			} catch (Exception e) {

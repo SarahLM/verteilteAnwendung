@@ -6,15 +6,9 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.ArrayList;
 
-import org.htw.fiw.vs.IBinder;
-
-//import rmi.interfaces.MainScreenInterface;
-import org.htw.fiw.vs.team2.Buttons.*;
-import org.htw.fiw.vs.team2.MitarbeiterToene.SoundInterface;
-
-
-//import rmi.interfaces.Observer;
-//import rmi.interfaces.SoundInterface;
+import rmi.interfaces.MainScreenInterface;
+import rmi.interfaces.Observer;
+import rmi.interfaces.SoundInterface;
 
 
 public class Vermittler extends java.rmi.server.UnicastRemoteObject implements Observer {
@@ -23,8 +17,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 	
 	private ArrayList<String> usersGUI;
 	private ArrayList<String> usersSounds;
-
-	private IBinder registry;
+	Registry registry;
 	
 	public Vermittler() throws RemoteException {
 		super();
@@ -34,19 +27,13 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 	
 	public void start() {
 		
-		
-		
 		try {
 			
-			//registry = LocateRegistry.getRegistry(1099);
-			Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
-			registry = (IBinder) connectRegistry.lookup("binder");
-			
+			registry = LocateRegistry.getRegistry(1099);
 			
 			while ( true ) {
 				
 				Thread.sleep(5000);
-				
 				
 				final String[] services = registry.list();
 				for ( String service : services ) {

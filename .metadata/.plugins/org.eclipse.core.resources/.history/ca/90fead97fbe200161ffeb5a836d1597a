@@ -23,8 +23,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 	
 	private ArrayList<String> usersGUI;
 	private ArrayList<String> usersSounds;
-
-	private IBinder registry;
+	Registry registry;
 	
 	public Vermittler() throws RemoteException {
 		super();
@@ -40,7 +39,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 			
 			//registry = LocateRegistry.getRegistry(1099);
 			Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
-			registry = (IBinder) connectRegistry.lookup("binder");
+			IBinder registry = (IBinder) connectRegistry.lookup("binder");
 			
 			
 			while ( true ) {

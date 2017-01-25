@@ -8,8 +8,8 @@ import java.rmi.server.UnicastRemoteObject;
 
 import org.htw.fiw.vs.IBinder;
 
-//import rmi.interfaces.SoundInterface;
-import org.htw.fiw.vs.team2.MitarbeiterToene.*;
+import rmi.interfaces.SoundInterface;
+import rmi.mitarbeiter.Sound;
 
 public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
 
