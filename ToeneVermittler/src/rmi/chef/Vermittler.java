@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import rmi.interfaces.MainScreenInterface;
 import rmi.interfaces.Observer;
 import rmi.interfaces.SoundInterface;
+import rmi.interfaces.IBinder;
 
 public class Vermittler extends java.rmi.server.UnicastRemoteObject implements Observer {
 
@@ -28,7 +29,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 		
 		try {
 			
-			registry = LocateRegistry.createRegistry(1099);
+			registry = LocateRegistry.getRegistry(1099);
 			
 			while ( true ) {
 				
@@ -36,20 +37,29 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 				
 				final String[] services = registry.list();
 				for ( String service : services ) {
-					if ( service.substring(0, 3).equals("GUI") && !this.usersGUI.contains(service) ) {
+					
+					if ( service.substring(0, 3).equals("GUI") && !usersGUI.contains(service) ) {
 						System.out.println("GUI Service added: " + service);
 						MainScreenInterface msi = (MainScreenInterface) registry.lookup(service);
 						msi.register(this);
-						this.usersGUI.add(service);
+						msi.setBodyText("Bis Boss ruft zum");
+						msi.setText(1, "Meeting");
+						msi.setText(2, "Dinner");
+						msi.setText(3, "After Work");
+						usersGUI.add(service);
+						
 					}
 					
-					if ( service.substring(0, 3).equals("SND") && !this.usersSounds.contains(service) ) {
+					if ( service.substring(0, 3).equals("SND") && !usersSounds.contains(service) ) {
 						System.out.println("Sound Service added: " + service);
-						this.usersSounds.add(service);
+						usersSounds.add(service);
 					}
+					
+					//System.out.println(service);
 				
 				}
 				
+				//System.out.println("");				
 			}
 			
 		} catch (Exception e) {

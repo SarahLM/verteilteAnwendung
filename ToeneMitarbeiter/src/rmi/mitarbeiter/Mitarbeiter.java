@@ -27,7 +27,7 @@ public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
 		while (notBound) {
 			try {
 				int token = (int) ((Math.random()*99999)+1);
-				Registry registry = LocateRegistry.getRegistry();
+				Registry registry = LocateRegistry.getRegistry(1099);
 				registry.bind("SND_" + String.format("%05d", token), this);
 				notBound = false;
 				System.out.println("Sound Service ist ready");

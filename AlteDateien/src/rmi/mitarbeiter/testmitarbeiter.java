@@ -4,8 +4,7 @@ import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import rmi.interfaces.VermittlerRemote;
-import rmi.interfaces.VermittlerRemoteImpl;
+import rmi.chef.VermittlerRemoteImpl;
 import rmi.interfaces.*;
 
 public class testmitarbeiter {

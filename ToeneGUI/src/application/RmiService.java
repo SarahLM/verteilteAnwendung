@@ -9,6 +9,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
+import rmi.interfaces.IBinder;
 import rmi.interfaces.MainScreenInterface;
 import rmi.interfaces.Observer;
 
@@ -29,8 +30,11 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 		boolean notBound = true;
 		while (notBound) {
 			try {
+				notBound = false	;
 				int token = (int) ((Math.random()*99999)+1);
-				Registry registry = LocateRegistry.getRegistry();
+				//Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.16", 1099);
+				//IBinder registry = (IBinder) connectRegistry.lookup("binder");
+				Registry registry = LocateRegistry.getRegistry(1099);
 				registry.bind("GUI_" + String.format("%05d", token), this);
 				notBound = false;
 				System.out.println("Frontend Service ist ready");
