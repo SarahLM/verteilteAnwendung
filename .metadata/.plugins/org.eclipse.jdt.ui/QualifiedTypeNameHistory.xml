@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
-<fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
 <fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.rmi.Naming"/>
-<fullyQualifiedTypeName name="rmi.interfaces.VermittlerRemote"/>
 <fullyQualifiedTypeName name="rmi.interfaces.VermittlerRemoteImpl"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
@@ -16,4 +12,16 @@
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="rmi.interfaces.MitarbeiterRemote"/>
 <fullyQualifiedTypeName name="rmi.interfaces.InterfaceOfButtontest"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="interfaces.Observer"/>
+<fullyQualifiedTypeName name="interfaces.Vermittler"/>
+<fullyQualifiedTypeName name="javafx.application.Platform"/>
+<fullyQualifiedTypeName name="interfaces.SoundInterface"/>
+<fullyQualifiedTypeName name="java.rmi.RMISecurityManager"/>
+<fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
+<fullyQualifiedTypeName name="rmi.interfaces.VermittlerRemote"/>
+<fullyQualifiedTypeName name="rmi.interfaces.IBinder"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.htw.fiw.vs.team2.Buttons.Observer"/>
+<fullyQualifiedTypeName name="org.htw.fiw.vs.team2.MitarbeiterToene.SoundInterface"/>
 </qualifiedTypeNameHistroy>
