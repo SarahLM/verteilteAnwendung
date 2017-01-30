@@ -16,6 +16,10 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 	private static final long serialVersionUID = 1L;
 	
 	MainScreenController msc;
+	
+	String ip = Variablen.ip;
+	int port =  Integer.parseInt(Variablen.port);
+	
 
 	public RmiService(MainScreenController msc) throws RemoteException {
 		super(0);
@@ -30,7 +34,7 @@ public class RmiService extends UnicastRemoteObject implements MainScreenInterfa
 			try {
 				notBound = false	;
 				int token = (int) ((Math.random()*99999)+1);
-				Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
+				Registry connectRegistry = LocateRegistry.getRegistry(ip,port);
 				IBinder registry = (IBinder) connectRegistry.lookup("binder");
 				//Registry registry = LocateRegistry.getRegistry(1099);
 				registry.bind("GUI_" + String.format("%05d", token), this);

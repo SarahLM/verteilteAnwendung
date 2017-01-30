@@ -8,8 +8,16 @@ import javafx.stage.Stage;
 public class Application extends javafx.application.Application{
 	
 	RmiService service;
+	
 
 	public static void main(String[] args) {
+		if(args.length > 1){
+			Variablen.ip = args[0];
+			Variablen.port = args[1];
+			
+		}else{
+			System.out.println("Keine Attribute");
+		}
 		launch(args);
 	}
 

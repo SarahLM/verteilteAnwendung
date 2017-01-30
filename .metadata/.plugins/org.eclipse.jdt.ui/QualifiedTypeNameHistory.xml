@@ -24,4 +24,5 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.htw.fiw.vs.team2.Buttons.Observer"/>
 <fullyQualifiedTypeName name="org.htw.fiw.vs.team2.MitarbeiterToene.SoundInterface"/>
+<fullyQualifiedTypeName name="org.glassfish.grizzly.http.server.StaticHttpHandler"/>
 </qualifiedTypeNameHistroy>

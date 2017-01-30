@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
 import org.htw.fiw.vs.IBinder;
+import org.htw.fiw.vs.team2.Buttons.MainScreenInterface;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -41,6 +42,18 @@ public class Hello {
 		return "hello " + user;
 	}
 
+	@GET
+	@Path("/mitarbeiter")
+	public String[] mitarbeiter(){
+		public String[] service = services;
+	
+		for () {
+			
+			(service.substring(0, 3).equals("GUI")
+	}
+	}
+	
+	
 	public Hello() throws RemoteException, NotBoundException {
 		
 		Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.21", 1099);

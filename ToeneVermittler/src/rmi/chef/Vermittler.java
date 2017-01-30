@@ -62,7 +62,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 						System.out.println("GUI Service added: " + service);
 						MainScreenInterface msi = (MainScreenInterface) registry.lookup(service);
 						msi.register(this);
-						msi.setBodyText("Bis Boss ruft zum");
+						msi.setBodyText("Big Boss ruft zum");
 						msi.setText(1, "Meeting");
 						msi.setText(2, "Dinner");
 						msi.setText(3, "After Work");

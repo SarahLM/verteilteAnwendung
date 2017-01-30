@@ -7,6 +7,7 @@
 <listEntry value="4"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="application.Application"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="192.168.178.21 1099"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ToeneGUI"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.rmi.server.codebase=file:C:\Users\s\Desktop\vs\verteilteAnwendung\Registry\bin\"/>
 </launchConfiguration>
