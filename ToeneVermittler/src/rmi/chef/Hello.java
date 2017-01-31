@@ -42,7 +42,7 @@ public class Hello {
 		return "hello " + user;
 	}
 
-	@GET
+	/*@GET
 	@Path("/mitarbeiter")
 	public String[] mitarbeiter(){
 		public String[] service = services;
@@ -51,12 +51,12 @@ public class Hello {
 			
 			(service.substring(0, 3).equals("GUI")
 	}
-	}
+	}*/
 	
 	
 	public Hello() throws RemoteException, NotBoundException {
 		
-		Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.21", 1099);
+		Registry connectRegistry = LocateRegistry.getRegistry("192.168.0.12", 1099);
 		registry = (IBinder) connectRegistry.lookup("binder");
 		
 	}
