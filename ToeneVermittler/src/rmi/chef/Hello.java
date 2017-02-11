@@ -17,7 +17,7 @@ import org.htw.fiw.vs.IBinder;
 
 
 
-@Path("/hello")
+@Path("/")
 public class Hello {
 
 	private String[] services;
@@ -25,7 +25,7 @@ public class Hello {
     
 	
 	@GET
-
+	@Path("/users")
 	public String[] hello() {
 		try{
 			services = registry.list();
@@ -56,7 +56,7 @@ public class Hello {
 	
 	public Hello() throws RemoteException, NotBoundException {
 		
-		Registry connectRegistry = LocateRegistry.getRegistry("192.168.0.12", 1099);
+		Registry connectRegistry = LocateRegistry.getRegistry("192.168.100.31", 1099);
 		registry = (IBinder) connectRegistry.lookup("binder");
 		
 	}

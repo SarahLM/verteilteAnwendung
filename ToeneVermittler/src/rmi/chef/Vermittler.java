@@ -45,7 +45,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 		try {
 			
 			//registry = LocateRegistry.getRegistry(1099);
-			Registry connectRegistry = LocateRegistry.getRegistry("141.45.207.220", 1099);
+			Registry connectRegistry = LocateRegistry.getRegistry("192.168.100.31", 1099);
 			registry = (IBinder) connectRegistry.lookup("binder");
 			
 		

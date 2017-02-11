@@ -13,9 +13,9 @@ import rmi.chef.*;
 public class RestServer {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
-		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8080"),
+		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8080/api/"),
 				new ResourceConfig(Hello.class));
-		StaticHttpHandler staticHttpHandler = new StaticHttpHandler("C:/Users/s/Desktop/vs/verteilteAnwendung/ToeneVermittler/src/rmi/chef/static");
+		StaticHttpHandler staticHttpHandler = new StaticHttpHandler("C:/Users/lawuc/verteileSysteme/verteilteAnwendung/ToeneVermittler/src/rmi/chef/static");
 		server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
 		System.out.println("Press any key to close");

@@ -16,12 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-	$.get( "api/users", function(data){
-	  console.log( "Fucking users:" + data );
-	  document.getElementById("users").innerHTML = data;
-	});
-</script>
+
 
 <link rel="stylesheet" href="Toene.css">
 
@@ -115,9 +110,9 @@ window.location.href = $(this).attr(
 <th>Liste der angemeldeten Mitarbeiter:</th>
 </tr>
 </thead>
-<tbody>
+<tbody id="users">
 <tr>
-<td id="users"></td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -136,6 +131,17 @@ $('#table').removeClass('display').addClass(
 				Radunski</em>
 		</p>
 	</footer>
+
+<script>
+	$.get( "api/users", function(data){
+	  console.log( "Fucking users:" + data );
+	  var html = "";
+	  for ( var i = 0; i < data.length; i++ ){
+			html = html + "<tr><td>" + data[i] + "</td></tr>"
+		  }
+	  document.getElementById("users").innerHTML = html;
+	});
+</script>
 
 </body>
 

@@ -30,7 +30,7 @@ public class Mitarbeiter extends UnicastRemoteObject implements SoundInterface {
 			try {
 				int token = (int) ((Math.random()*99999)+1);
 				
-				Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.21", 1099);
+				Registry connectRegistry = LocateRegistry.getRegistry("192.168.100.31", 1099);
 				IBinder registry = (IBinder) connectRegistry.lookup("binder");
 				
 				//Registry registry = LocateRegistry.getRegistry("141.45.207.220",1099);
