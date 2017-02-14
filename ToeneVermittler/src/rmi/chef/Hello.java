@@ -56,7 +56,7 @@ public class Hello {
 	
 	public Hello() throws RemoteException, NotBoundException {
 		
-		Registry connectRegistry = LocateRegistry.getRegistry("192.168.100.31", 1099);
+		Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.23", 1099);
 		registry = (IBinder) connectRegistry.lookup("binder");
 		
 	}

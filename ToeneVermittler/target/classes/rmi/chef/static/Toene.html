@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<link rel="stylesheet" href="Toene.css">
+
+<script type="text/javascript"
+	src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+<script type="text/javascript" charset="utf-8"></script>
+
+<script>
+//<![CDATA[
+
+$(document)
+.ready(
+function() {
+$("#table")
+.DataTable(
+{
+"sScrollX" : true,
+initComplete : function() {
+this
+.api()
+.columns()
+.every(
+function() {
+var column = this;
+var select = $(
+'<br><select><option value=""></option></select>')
+.appendTo(
+$(column
+.header()))
+.on(
+'change',
+function() {
+var val = $.fn.dataTable.util
+.escapeRegex($(
+this)
+.val());
+column
+.search(
+val ? '^'
++ val
++ '$'
+: '',
+true,
+false)
+.draw();
+});
+column
+.data()
+.unique()
+.sort()
+.each(
+function(
+d,
+j) {
+select
+.append('<option value="'+d+'">'
++ d
++ '</option>')
+});
+});
+this.api().table().draw();
+}
+});
+$('#table').delegate(
+'tbody > tr > td',
+'click',
+function() {
+if ($(this).attr('href')) {
+window.location.href = $(this).attr(
+'href');
+}
+});
+});
+//]]>
+</script>
+</head>
+
+
+<body>
+
+
+	<div class="jumbotron">
+		<img src="Reminder.PNG" alt="Reminder" class="center-block">
+		<!-- <img style="width: 5%"src="Boss-2-icon.png" alt="Boss" class="center-block"> -->
+	</div>
+
+	<div class="container">
+<table id="table" class="table" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>Liste der angemeldeten Mitarbeiter:</th>
+</tr>
+</thead>
+<tbody id="users">
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript">
+// For demo to fit into DataTables site builder...
+$('#table').removeClass('display').addClass(
+'table table-striped table-bordered table-hover');
+</script>
+
+
+	<footer class="footy">
+		<p class="text-center">
+			<em>Made By Sarah-Lee Mendenhall, Lisa Kafidoff und Anne
+				Radunski</em>
+		</p>
+	</footer>
+
+<script>
+	$.get( "api/users", function(data){
+	  console.log( "Fucking users:" + data );
+	  var html = "";
+	  for ( var i = 0; i < data.length; i++ ){
+			html = html + "<tr><td>" + data[i] + "</td></tr>"
+		  }
+	  document.getElementById("users").innerHTML = html;
+	});
+</script>
+
+</body>
+
+</html>

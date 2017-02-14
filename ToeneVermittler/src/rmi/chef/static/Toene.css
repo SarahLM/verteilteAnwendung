@@ -19,9 +19,7 @@ p {font-size: 12px;}
 
 .footy {
     position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 60px;
     background-color: transparent;
     color: #808080;
 }

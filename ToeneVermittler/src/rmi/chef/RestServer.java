@@ -15,7 +15,7 @@ public class RestServer {
 		
 		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:8080/api/"),
 				new ResourceConfig(Hello.class));
-		StaticHttpHandler staticHttpHandler = new StaticHttpHandler("C:/Users/lawuc/verteileSysteme/verteilteAnwendung/ToeneVermittler/src/rmi/chef/static");
+		StaticHttpHandler staticHttpHandler = new StaticHttpHandler("C:/Users/s/Desktop/VerteilteSysteme/verteilteAnwendung/ToeneVermittler/src/rmi/chef/static/");
 		server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
 		System.out.println("Press any key to close");

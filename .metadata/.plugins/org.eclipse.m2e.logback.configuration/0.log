@@ -466,3 +466,68 @@ org.eclipse.core.runtime.CoreException: Launch configuration RestServer referenc
 2017-01-29 16:29:00,070 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\vs\verteilteAnwendung\ToeneVermittler\src\main\resources
 2017-01-29 16:29:00,078 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-01-29 16:29:00,081 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\vs\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 11:37:47,136 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: de.htw.messenger:chatclient:1.0-SNAPSHOT @ C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\pom.xml.
+2017-02-14 11:38:16,846 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 11:38:16,864 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 11:38:16,867 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 11:38:16,868 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 11:38:30,314 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 11:38:30,316 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 11:38:30,317 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 11:38:30,318 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 12:10:57,883 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:10:57,902 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 12:10:57,904 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:10:57,905 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 12:19:47,644 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:19:47,646 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 12:19:47,647 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:19:47,648 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 12:20:20,412 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:20:20,413 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 12:20:20,414 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:20:20,415 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 12:30:27,996 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:30:27,997 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 12:30:28,000 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 12:30:28,001 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 13:34:37,117 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 13:34:37,129 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 13:34:37,133 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 13:34:37,134 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 13:38:09,511 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 13:38:09,514 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 13:38:09,515 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 13:38:09,516 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 15:39:43,004 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 15:39:43,029 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 15:39:43,031 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 15:39:43,033 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 21:16:46,503 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:16:46,537 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 21:16:46,544 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:16:46,546 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 21:17:51,725 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:17:51,727 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 21:17:51,729 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:17:51,730 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 21:22:28,354 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:22:28,355 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 21:22:28,357 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 21:22:28,358 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 22:12:26,906 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:12:26,917 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 22:12:26,919 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:12:26,920 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 22:14:57,595 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:14:57,596 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 22:14:57,598 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:14:57,599 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 22:17:37,688 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:17:37,689 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 22:17:37,691 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:17:37,692 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources
+2017-02-14 22:20:43,456 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:20:43,458 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\main\resources
+2017-02-14 22:20:43,459 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-02-14 22:20:43,460 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\s\Desktop\VerteilteSysteme\verteilteAnwendung\ToeneVermittler\src\test\resources

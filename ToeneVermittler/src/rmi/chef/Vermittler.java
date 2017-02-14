@@ -11,7 +11,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PathParam;
 
 import org.htw.fiw.vs.IBinder;
-
+import org.htw.fiw.vs.team1.LampInterface;
 //import rmi.interfaces.MainScreenInterface;
 import org.htw.fiw.vs.team2.Buttons.*;
 import org.htw.fiw.vs.team2.MitarbeiterToene.SoundInterface;
@@ -27,6 +27,8 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 	
 	private ArrayList<String> usersGUI;
 	private ArrayList<String> usersSounds;
+	private ArrayList<String> usersLamp;
+
 
 	private IBinder registry;
 
@@ -36,6 +38,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 		super();
 		usersGUI = new ArrayList<>();
 		usersSounds = new ArrayList<>();
+		usersLamp = new ArrayList<>();
 	}
 	
 	public void start() {
@@ -45,7 +48,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 		try {
 			
 			//registry = LocateRegistry.getRegistry(1099);
-			Registry connectRegistry = LocateRegistry.getRegistry("192.168.100.31", 1099);
+			Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.23", 1099);
 			registry = (IBinder) connectRegistry.lookup("binder");
 			
 		
@@ -75,6 +78,10 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 						usersSounds.add(service);
 					}
 					
+					if ( service.substring(0, 3).equals("LAM") && !usersLamp.contains(service) ) {
+						System.out.println("Lamp Service added: " + service);
+						usersLamp.add(service);
+					}
 					//System.out.println(service);
 				
 				}
@@ -104,7 +111,15 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 			for ( String service : usersSounds ) {
 				System.out.println(service);
 				SoundInterface si = (SoundInterface) registry.lookup(service);
-				si.play(buttonId);
+				
+					si.play(buttonId);
+					
+			}
+			for ( String service : usersLamp ) {
+				System.out.println(service);
+				LampInterface la = (LampInterface) registry.lookup(service);
+				for (int i=0; i<50000; i++){
+				la.changeStatus();}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
