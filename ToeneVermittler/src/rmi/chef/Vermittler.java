@@ -48,7 +48,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 		try {
 			
 			//registry = LocateRegistry.getRegistry(1099);
-			Registry connectRegistry = LocateRegistry.getRegistry("192.168.178.23", 1099);
+			Registry connectRegistry = LocateRegistry.getRegistry("141.45.204.25", 1099);
 			registry = (IBinder) connectRegistry.lookup("binder");
 			
 		
@@ -118,7 +118,7 @@ public class Vermittler extends java.rmi.server.UnicastRemoteObject implements O
 			for ( String service : usersLamp ) {
 				System.out.println(service);
 				LampInterface la = (LampInterface) registry.lookup(service);
-				for (int i=0; i<50000; i++){
+				for (int i=0; i<1; i++){
 				la.changeStatus();}
 			}
 		} catch (Exception e) {
